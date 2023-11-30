@@ -11,6 +11,11 @@ np.random.seed(42)
 tf.random.set_seed(42)
 tf.keras.utils.set_random_seed(42)
 
+with open('app/theme.css') as f:
+    css = f.read()
+
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
 def header():
     st.header("Dhaka Weather Forecasting")
 
@@ -122,3 +127,6 @@ def main():
 
 
 main()
+with st.sidebar:
+
+    st.sidebar.image("app/omdena-bangladesh-chapter.png",use_column_width=True)
